@@ -1,0 +1,211 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'layouts.scss';
+
+//global styles
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $mediumblue1;
+    color: $lightestblue;
+    margin: .8em;
+}
+
+
+// Grid Layout
+
+// @media screen and (min-width: 1028px) {
+
+//     body {
+//         display: grid;
+//         width: 100%;
+//         height: 100vh;
+//         grid-template-columns: 1fr 2fr 2fr;
+//         grid-template-rows: 1fr 1fr 1fr 1fr;
+//         grid-template-areas: 
+//             "sidebar grid2 grid2"
+//             "sidebar grid2 grid2"
+//             "sidebar grid2 grid2"
+//             "footer footer footer";
+//         background-color: $mediumblue1;
+//     }
+
+//     #sidebar {
+//         grid-column-start: 1;
+//         grid-column-end: 2;
+//         grid-row-start: 1;
+//         grid-row-end: 4;
+//         background-color: $darkblue;
+//     }
+
+//     header {
+//         grid-area: sidebar;
+//         justify-content: center;
+//         padding: .25em;
+//         text-align: center;
+//         align-content: start;
+//     }
+
+//     .previous {
+//         grid-area: sidebar;
+//     }
+
+//     .grid2 {
+//         grid-area: grid2;
+//         display: grid;
+//         grid-template-areas: 
+//             "intro intro"
+//             "school other"
+//             "school other";
+
+//     }
+
+//     .intro {
+//         grid-area: intro;
+//         background-color: $mediumblue2;
+//         display: grid;
+//         grid-template-columns: 1fr 3fr;
+//         grid-template-areas: 
+//             "headshot title"
+//             "headshot description"
+//             "social social";
+
+//     }
+
+//         #headshot {
+//             grid-area: headshot;
+//         }
+
+//         .title {
+//             grid-area: title;
+//         }
+
+//         .description{
+//             grid-area: description;
+//         }
+
+//         #social {
+//             grid-area: social;
+//         }
+
+
+//     #school {
+//         grid-area: school;
+//     }
+
+//     #other {
+//         grid-area: other;
+//     }
+
+//     footer {
+//         grid-area: footer;
+//     }
+// }
+
+//general typography
+
+
+h1 {
+    font-family: $font2;
+    color: $lightestblue;
+    font-size: 3em;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: $font1;
+    color: $darkgreen;
+}
+
+p {
+    font-family: $font1;
+    font-size: 1em;
+    color: $darkgreen;
+}
+
+#current-nav h3 {
+    color: $lightestblue;
+    font-weight: 400;
+}
+
+#social {
+    color: $lightestblue;
+    font-family: $iconfa;
+}
+
+//links
+
+a {
+    color: $darkblue;
+    text-decoration: none;
+
+    &:hover {
+        color: $darkviolet;
+        text-decoration: dotted underline;
+    }
+}
+
+
+
+//menu
+#logo {
+    max-width: 175px;
+    border: 0;
+    padding: .5em;
+}
+
+.nav-link  {
+    @include navitem;
+}
+
+
+
+
+
+//intro section
+#intro h1 a {
+    font-family: $font2;
+    color: $lightestblue;
+    text-decoration: none;
+}
+
+#headshot {
+    @include homepageimg;
+    &:hover {
+        background-color: transparent;
+        opacity: 1;
+    }
+    
+}
+
+
+
+
+//main area general styles
+
+.portfolio {
+    @include portfolio;
+    position: relative;
+        
+        button {
+            @include btn-default;
+        }
+}
+
+
+.recent {
+    @include homepageimg;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+//My Mixins
+
+@mixin portfolio {
+    background-color: $lightblue;
+    padding: 1em;
+    margin: 1em auto;
+    color: $darkgreen;
+
+    // -webkit-box-shadow: 5px 5px 5px black;
+    // -moz-box-shadow:  5px 5px 5px black;
+    // box-shadow:  5px 5px 5px black;
+
+}
+
+@mixin navitem {
+    display: block;
+    margin: 1em;
+    color: $darkviolet;
+    padding: .5em;
+    background-color: $lightestblue;
+    text-transform: uppercase;
+    
+
+    &:hover {
+        color: $lightestviolet;
+        background-color: $darkviolet;
+    }
+
+    &:active {
+        color: $lightestviolet;
+        background-color: $mediumviolet2;
+    }
+
+}
+
+@mixin btn-default {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $darkblue;
+    color: $lightestblue;
+    padding: .5em;
+    margin: 1em;
+    color: $lightestblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+        &:hover {
+            background-color: $darkviolet;
+            color: $lightestblue;
+        }
+}
+
+@mixin homepageimg {
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
+
+    border: 3px solid $darkgreen;
+
+        &:hover {
+            background-color: $mediumgreen2;
+            opacity: .7;
+        }
+    
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0 auto 1.5em;
+    display: inline-block;
+    
+    
+}

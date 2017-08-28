@@ -1,0 +1,90 @@
+//responsive layout
+
+
+body {
+    margin: .8em;
+    background-color: $mediumblue1;
+}
+
+header {
+    background-color: $darkblue;
+    width: 100%;
+    margin:0;
+    padding: .25em;
+    position: relative;
+}
+
+#main-nav {
+    position: absolute;
+    top: 1em;
+    right: 0;
+    max-width: 60%;
+    text-align: right;
+    margin: 2em 1em 0 0;
+    
+    a {
+        display: inline;
+        margin: .25em;
+        padding: .25em;
+        background-color: transparent;
+        color: $lightestblue;
+        font-size: 2em;
+        text-align: center;
+
+        &:hover {
+            color: $lightviolet;
+        }
+    }
+}
+
+#current-nav {
+    display: none;
+}
+
+.intro {
+    margin-top: 1em;
+    background-color: #3C5C97;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+}
+
+#headshot {
+    float: left;
+    max-width: 30%;
+}
+
+.title, 
+.description {
+    display: block;
+    text-align: right;
+    color: $lightestblue;
+}
+
+.title {
+    margin: 0;
+}
+
+.description {
+    margin-left: .5em;
+    padding: 0 0 0 10em;
+}
+
+#social {
+    display: block;
+    text-align: center;
+
+    a {
+        color: $lightestblue;
+
+        &:hover {
+            color: $lightviolet;
+        }
+    }
+}
+
+.portfolio {
+    clear: both;
+}
+
