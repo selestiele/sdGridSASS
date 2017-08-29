@@ -1,8 +1,10 @@
 //responsive layout
 
+/* Responsive layout, mobile-first */
 
 body {
-    margin: .8em;
+    margin: 0 auto;
+    padding: 0 .8em;
     background-color: $mediumblue1;
 }
 
@@ -46,7 +48,6 @@ header {
     background-color: #3C5C97;
     width: 100%;
     text-align: center;
-    font-size: 2em;
     padding: 1em;
 }
 
@@ -64,22 +65,29 @@ header {
 
 .title {
     margin: 0;
+    font-size: 2em;
 }
 
 .description {
-    margin-left: .5em;
-    padding: 0 0 0 10em;
+    text-align: left;
+}
+
+.heading hr {
+    color: $lightestblue;
+    width: 75%;
+    
 }
 
 #social {
     display: block;
     text-align: center;
-
+    
     a {
-        color: $lightestblue;
+        color: $lightestviolet;
+        margin: 0 1em;
 
         &:hover {
-            color: $lightviolet;
+            color: $mediumviolet1;
         }
     }
 }
@@ -88,3 +96,173 @@ header {
     clear: both;
 }
 
+footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #sidebar {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #main-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: .5em;
+                
+        a {
+        font-size: 1.25em;
+        line-height: 1em;
+        display: block;
+        margin: 0 .5em 0 0;
+        padding: .1em 0;
+        text-align: right;
+        }
+    }
+
+    .grid2 {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .intro {
+        width: 100%;
+
+        #headshot {
+            width: 100px;
+            margin: 0 1em 0;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: .8em;
+        }
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    img {
+        width: 40%;
+    }
+
+    .portfolio  {
+        a {
+            margin: 1em;
+        }
+
+        hr { 
+            color: $darkgreen;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    aside {
+        @include portfolio;
+    }
+
+}
+
+/* Grid Layout for larger screens */
+
+@media screen and (min-width: 900px) {
+    body {
+        display: grid;
+        width: 100%;
+        height: 100vh;
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "sidebar grid2 grid2"
+            "sidebar grid2 grid2"
+            "sidebar grid2 grid2"
+            "footer footer footer";
+        background-color: $mediumblue1;
+    }
+
+    #sidebar {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        background-color: $darkblue;
+    }
+
+    header {
+        grid-area: sidebar;
+        justify-content: center;
+        padding: .25em;
+        text-align: center;
+        align-content: start;
+    }
+
+    .previous {
+        grid-area: sidebar;
+    }
+
+    .grid2 {
+        grid-area: grid2;
+        display: grid;
+        grid-template-areas: 
+            "intro intro"
+            "school other"
+            "school other";
+
+    }
+
+    .intro {
+        grid-area: intro;
+        background-color: $mediumblue2;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: 
+            "headshot title"
+            "headshot description"
+            "social social";
+
+    }
+
+        #headshot {
+            grid-area: headshot;
+        }
+
+        .title {
+            grid-area: title;
+        }
+
+        .description{
+            grid-area: description;
+        }
+
+        #social {
+            grid-area: social;
+        }
+
+
+    #school {
+        grid-area: school;
+    }
+
+    #other {
+        grid-area: other;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
