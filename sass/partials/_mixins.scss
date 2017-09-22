@@ -2,8 +2,8 @@
 
 @mixin portfolio {
     background-color: $lightblue;
-    padding: 1em;
-    margin: 1em auto;
+    padding: 1em 1em 3em;
+    margin: 1em auto 0;
     color: $darkgreen;
 
     // -webkit-box-shadow: 5px 5px 5px black;
@@ -70,3 +70,14 @@
     
     
 }
+
+@mixin portfolioimg {
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+    border: 3px solid $darkgreen;
+    margin: .5em;
+    display: inline;
+    
+}
+

@@ -172,7 +172,7 @@ td,
 th {
   padding: 0; }
 
-/* Import Custom Bootstrap and Fontawesome */
+/* Import Fontawesome */
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2513,7 +2513,8 @@ header {
   width: 100%;
   margin: 0;
   padding: .25em;
-  position: relative; }
+  position: relative;
+  height: 100%; }
 
 #main-nav {
   position: absolute;
@@ -2522,20 +2523,18 @@ header {
   max-width: 60%;
   text-align: right;
   margin: 2em 1em 0 0; }
-  #main-nav a {
-    display: inline;
-    margin: .25em;
-    padding: .25em;
+  #main-nav .nav-link {
+    display: block;
     background-color: transparent;
     color: #FDFEFF;
-    font-size: 2em;
-    text-align: center; }
-    #main-nav a:hover {
+    font-size: 1.5em; }
+    #main-nav .nav-link:hover {
       color: #CBBAEA; }
 
 #current-nav {
   display: none; }
 
+/* Home page relevant sections */
 .intro {
   margin-top: 1em;
   background-color: #3C5C97;
@@ -2586,7 +2585,8 @@ footer {
 
   #sidebar {
     width: 95%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    height: 8em; }
 
   #logo {
     width: 100px; }
@@ -2626,51 +2626,142 @@ footer {
 
   .portfolio a {
     margin: 1em; }
-  .portfolio hr {
+  .portfolio h3 {
     color: #0F6D42;
-    margin-bottom: 1.5em; }
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid #0F6D42; }
 
   aside {
     background-color: #B9CAE9;
-    padding: 1em;
-    margin: 1em auto;
+    padding: 1em 1em 3em;
+    margin: 1em auto 0;
     color: #0F6D42; } }
+/* About Page layout */
+#resume {
+  background-color: #B9CAE9;
+  padding: 1em 1em 3em;
+  margin: 1em auto 0;
+  color: #0F6D42;
+  margin: 1em 1em 0; }
+  #resume p {
+    color: #173469; }
+
+/* Portfolio Pages layout */
+.mainportfolio {
+  background-color: #B9CAE9;
+  padding: 1em 1em 3em;
+  margin: 1em auto 0;
+  color: #0F6D42;
+  margin: 1em 1em 0;
+  text-align: center;
+  width: 95%; }
+  .mainportfolio h3 {
+    border-bottom: 3px solid #0F6D42;
+    width: 100%;
+    text-align: left; }
+  .mainportfolio a {
+    text-decoration: none; }
+  .mainportfolio ul {
+    list-style-type: none; }
+
+.portfoliowork {
+  display: inline;
+  max-width: 300px;
+  margin: 10px; }
+
+/* Contact Page layout */
 /* Grid Layout for larger screens */
 @media screen and (min-width: 900px) {
   body {
+    background-color: #708CC0;
     display: grid;
     width: 100%;
-    height: 100vh;
-    grid-template-columns: 1fr 2fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "sidebar grid2 grid2" "sidebar grid2 grid2" "sidebar grid2 grid2" "footer footer footer";
-    background-color: #708CC0; }
+    grid-template-rows: 200px 1fr 1fr 2fr 100px;
+    grid-template-areas: "sidebar grid2" "sidebar grid2" "previous grid2" "previous grid2" "footer footer"; }
 
   #sidebar {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    background-color: #173469; }
+    grid-area: sidebar; }
+
+  #sidebar,
+  .previous {
+    max-width: 350px; }
 
   header {
-    grid-area: sidebar;
+    grid-area: grid2;
     justify-content: center;
     padding: .25em;
     text-align: center;
     align-content: start; }
 
-  .previous {
+  #logo {
     grid-area: sidebar; }
+
+  #main-nav {
+    grid-area: sidebar;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 0 3em; }
+    #main-nav .nav-link {
+      display: block;
+      margin: 1em;
+      color: #36176C;
+      padding: .5em;
+      background-color: #FDFEFF;
+      text-transform: uppercase;
+      font-size: 1em; }
+      #main-nav .nav-link:hover {
+        color: #FEFDFF;
+        background-color: #36176C; }
+      #main-nav .nav-link:active {
+        color: #FEFDFF;
+        background-color: #603E9A; }
+
+  #current-nav {
+    grid-area: sidebar;
+    display: block; }
+    #current-nav .nav-link {
+      display: block;
+      margin: 1em;
+      color: #36176C;
+      padding: .5em;
+      background-color: #FDFEFF;
+      text-transform: uppercase; }
+      #current-nav .nav-link:hover {
+        color: #FEFDFF;
+        background-color: #36176C; }
+      #current-nav .nav-link:active {
+        color: #FEFDFF;
+        background-color: #603E9A; }
+    #current-nav h3 {
+      color: #6AC59C; }
+
+  .previous {
+    grid-area: previous;
+    display: block;
+    color: #FDFEFF;
+    background-color: #173469;
+    padding: 1em;
+    margin: 0; }
+    .previous ul {
+      list-style-type: none;
+      padding-left: 0; }
+    .previous li {
+      margin: .25em 0; }
+    .previous h3 {
+      color: #FDFEFF;
+      border-bottom: 2px solid #FDFEFF; }
 
   .grid2 {
     grid-area: grid2;
     display: grid;
-    grid-template-areas: "intro intro" "school other" "school other"; }
+    grid-template-areas: "intro intro" "intro intro" "school other" "school other" "school other";
+    margin: 0 1em; }
 
   .intro {
     grid-area: intro;
     background-color: #3C5C97;
+    margin-top: 0;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-areas: "headshot title" "headshot description" "social social"; }
@@ -2678,20 +2769,37 @@ footer {
   #headshot {
     grid-area: headshot; }
 
-  .title {
-    grid-area: title; }
+  .title,
+  .heading {
+    grid-area: title;
+    text-align: center; }
+    .title h1,
+    .heading h1 {
+      font-size: 3em; }
+    .title h4,
+    .heading h4 {
+      font-size: 1em; }
 
   .description {
-    grid-area: description; }
+    grid-area: description;
+    padding-left: 1em;
+    text-align: left; }
 
   #social {
     grid-area: social; }
 
   #school {
-    grid-area: school; }
+    grid-area: school;
+    margin-right: 5px; }
 
   #other {
-    grid-area: other; }
+    grid-area: other;
+    margin-left: 5px; }
+
+  .portfolio h3 {
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid #0F6D42;
+    padding-bottom: .5em; }
 
   footer {
     grid-area: footer; } }
@@ -2719,6 +2827,9 @@ a {
     color: #36176C;
     text-decoration: dotted underline; }
 
+.intext {
+  color: #CBBAEA; }
+
 #logo {
   max-width: 175px;
   border: 0;
@@ -2738,10 +2849,6 @@ a {
     color: #FEFDFF;
     background-color: #603E9A; }
 
-#current-nav h3 {
-  color: #FDFEFF;
-  font-weight: 400; }
-
 #headshot {
   -webkit-border-radius: 5%;
   -moz-border-radius: 5%;
@@ -2760,8 +2867,8 @@ a {
 
 .portfolio {
   background-color: #B9CAE9;
-  padding: 1em;
-  margin: 1em auto;
+  padding: 1em 1em 3em;
+  margin: 1em auto 0;
   color: #0F6D42;
   position: relative; }
   .portfolio button {

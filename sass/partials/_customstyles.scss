@@ -1,6 +1,9 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 @import 'layouts.scss';
+@import 'desktop.scss';
+
+
 
 //global styles
 
@@ -41,6 +44,10 @@ a {
     }
 }
 
+.intext {
+    color: $lightviolet;
+}
+
 
 
 //menus
@@ -54,15 +61,8 @@ a {
     @include navitem;
 }
 
-#current-nav h3 {
-    color: $lightestblue;
-    font-weight: 400;
-}
-
 
 //intro section
-
-
 #headshot {
     @include homepageimg;
     

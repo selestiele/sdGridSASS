@@ -1,6 +1,4 @@
-//responsive layout
-
-/* Responsive layout, mobile-first */
+/* Layout for IE/Edge without CSS grid support */
 
 body {
     margin: 0 auto;
@@ -14,7 +12,6 @@ header {
     margin:0;
     padding: .25em;
     position: relative;
-    height: 100%
 }
 
 #main-nav {
@@ -26,14 +23,13 @@ header {
     margin: 2em 1em 0 0;
     
     .nav-link {
-        // display: inline;
-        // margin: .25em;
-        // padding: .25em;
-        display: block;
+        display: inline;
+        margin: .25em;
+        padding: .25em;
         background-color: transparent;
         color: $lightestblue;
-        font-size: 1.5em;
-        // text-align: center;
+        font-size: 2em;
+        text-align: center;
 
         &:hover {
             color: $lightviolet;
@@ -45,7 +41,6 @@ header {
     display: none;
 }
 
-/* Home page relevant sections */
 .intro {
     margin-top: 1em;
     background-color: #3C5C97;
@@ -112,7 +107,6 @@ footer {
     #sidebar {
         width: 95%;
         margin: 0 auto;
-        height: 8em;
     }
 
     #logo {
@@ -182,49 +176,3 @@ footer {
     }
 
 }
-
-/* About Page layout */
-
-#resume {
-    @include portfolio;
-    margin: 1em 1em 0;
-
-    p {
-        color: $darkblue;
-    }
-   
-}
-
-/* Portfolio Pages layout */
-
-.mainportfolio {
-    @include portfolio;
-    margin: 1em 1em 0;
-    text-align: center;
-    width: 95%;
-
-    h3 {
-        border-bottom: 3px solid $darkgreen;
-        width: 100%;
-        text-align: left;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    ul {
-        list-style-type: none;
-    }
-}
-
-.portfoliowork {
-    display: inline;
-    max-width: 300px;
-    margin: 10px;
-}
-
-
-
-/* Contact Page layout */
-
