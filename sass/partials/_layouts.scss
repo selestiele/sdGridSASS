@@ -1,0 +1,306 @@
+//responsive layout
+
+/* Responsive layout, mobile-first */
+
+body {
+    margin: 0 auto;
+    padding: 0 .8em;
+    background-color: $mediumblue1;
+}
+
+header {
+    background-color: $darkblue;
+    width: 100%;
+    margin:0;
+    padding: .25em;
+    position: relative;
+    height: 100%
+}
+
+#main-nav {
+    position: absolute;
+    top: 1em;
+    right: 0;
+    max-width: 60%;
+    text-align: right;
+    margin: 2em 1em 0 0;
+    
+    .nav-link {
+        // display: inline;
+        // margin: .25em;
+        // padding: .25em;
+        display: block;
+        background-color: transparent;
+        color: $lightestblue;
+        font-size: 1.5em;
+        // text-align: center;
+
+        &:hover {
+            color: $lightviolet;
+        }
+    }
+}
+
+#current-nav {
+    display: none;
+}
+
+/* Home page relevant sections */
+.intro {
+    margin-top: 1em;
+    background-color: $mediumblue2;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+}
+
+#headshot {
+    float: left;
+    max-width: 30%;
+}
+
+.title, 
+.description {
+    display: block;
+    text-align: right;
+    color: $lightestblue;
+}
+
+.title {
+    margin: 0;
+    font-size: 2em;
+}
+
+.description {
+    text-align: left;
+}
+
+.heading hr {
+    color: $lightestblue;
+    width: 75%;
+    
+}
+
+#social {
+    display: block;
+    text-align: center;
+    
+    a {
+        color: $lightestviolet;
+        margin: 0 1em;
+
+        &:hover {
+            color: $mediumviolet1;
+        }
+    }
+}
+
+.portfolio {
+    clear: both;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2em;
+}
+
+@media screen and (max-width: 899px) {
+    body {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #sidebar {
+        width: 95%;
+        margin: 0 auto;
+        height: 8em;
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #main-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: .5em;
+                
+        a {
+        font-size: 1.25em;
+        line-height: 1em;
+        display: block;
+        margin: 0 .5em 0 0;
+        padding: .1em 0;
+        text-align: right;
+        }
+    }
+
+    .grid2 {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .intro {
+        width: 100%;
+
+        #headshot {
+            width: 100px;
+            margin: 0 1em 0;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: .8em;
+        }
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    img {
+        width: 40%;
+    }
+
+    .portfolio  {
+        a {
+            margin: 1em;
+        }
+
+        h3 { 
+            color: $darkgreen;
+            margin-bottom: 1.5em;
+            border-bottom: 2px solid $darkgreen;
+        }
+    }
+
+    aside {
+        @include portfolio;
+    }
+
+}
+
+/* About Page layout */
+
+#resume {
+    @include portfolio;
+    margin: 1em 1em 0;
+    text-align: left;
+
+    p {
+        color: $darkblue;
+    }
+
+    button {
+        background-color: $darkblue;
+        color: $lightestblue;
+        padding: .5em;
+        margin: 1em;
+        color: $lightestblue;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+            &:hover {
+                background-color: $darkviolet;
+                color: $lightestblue;
+            }
+    }
+   
+}
+
+
+
+/* Portfolio Pages layout */
+
+.mainportfolio {
+    @include portfolio;
+    margin: 1em 1em 0;
+    text-align: center;
+    //width: 100%;
+
+    h3 {
+        border-bottom: 3px solid $darkgreen;
+        width: 100%;
+        text-align: left;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        margin: 1em;
+        padding: 1em;
+        width: 50%;
+    }
+}
+
+.portfoliowork {
+    display: inline;
+    max-width: 300px;
+    margin: 10px;
+}
+
+
+
+/* Contact Page layout */
+
+
+
+/* Course Page layouts */
+
+@media screen and (max-width: 899px) {
+    .courseTitle {
+        margin-top: 1em;
+        background-color: $mediumblue2;
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+        height: 5em;
+
+        h2 {
+            color: $lightestblue;
+            margin-top: 0;
+            font-size: 1.25em;
+        }
+    }
+}
+.courseIndex {
+    @include portfolio;
+        
+    ul {
+        margin: 0 auto;
+        text-align: justify;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 2em;
+        margin: .5em;
+        background-color: $lightgreen;
+        border: 3px solid $darkgreen;
+        border-radius: 20px;
+        text-align: center;
+        width: 8em;
+
+        &:hover {
+            background-color: $darkgreen;
+            color: $lightestgreen;
+        }
+    }
+
+    a {
+        color: $darkgreen;
+    }
+}
+

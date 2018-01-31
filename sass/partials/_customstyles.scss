@@ -1,0 +1,103 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'layouts.scss';
+@import 'desktop.scss';
+
+
+
+//global styles
+
+* {
+    box-sizing: border-box;
+}
+
+//general typography
+
+
+h1 {
+    font-family: $font2;
+    color: $lightestblue;
+    font-size: 3em;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: $font1;
+    color: $darkgreen;
+}
+
+p {
+    font-family: $font1;
+    font-size: 1em;
+    color: $darkgreen;
+}
+
+
+//links
+
+a {
+    color: $darkblue;
+    text-decoration: none;
+
+    &:hover {
+        color: $darkviolet;
+        text-decoration: dotted underline;
+    }
+}
+
+.intext {
+    color: $lightviolet;
+}
+
+
+
+//menus
+#logo {
+    max-width: 175px;
+    border: 0;
+    padding: .5em;
+}
+
+.nav-link  {
+    @include navitem;
+}
+
+
+//intro section
+#headshot {
+    @include homepageimg;
+    
+    &:hover {
+        background-color: transparent;
+        opacity: 1;
+    } 
+}
+
+
+
+//main area general styles
+
+.portfolio {
+    @include portfolio;
+    position: relative;
+        
+        button {
+            @include btn-default;
+        }
+}
+
+.recent {
+    @include homepageimg;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

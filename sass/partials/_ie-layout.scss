@@ -1,0 +1,178 @@
+/* Layout for IE/Edge without CSS grid support */
+
+body {
+    margin: 0 auto;
+    padding: 0 .8em;
+    background-color: $mediumblue1;
+}
+
+header {
+    background-color: $darkblue;
+    width: 100%;
+    margin:0;
+    padding: .25em;
+    position: relative;
+}
+
+#main-nav {
+    position: absolute;
+    top: 1em;
+    right: 0;
+    max-width: 60%;
+    text-align: right;
+    margin: 2em 1em 0 0;
+    
+    .nav-link {
+        display: inline;
+        margin: .25em;
+        padding: .25em;
+        background-color: transparent;
+        color: $lightestblue;
+        font-size: 2em;
+        text-align: center;
+
+        &:hover {
+            color: $lightviolet;
+        }
+    }
+}
+
+#current-nav {
+    display: none;
+}
+
+.intro {
+    margin-top: 1em;
+    background-color: #3C5C97;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+}
+
+#headshot {
+    float: left;
+    max-width: 30%;
+}
+
+.title, 
+.description {
+    display: block;
+    text-align: right;
+    color: $lightestblue;
+}
+
+.title {
+    margin: 0;
+    font-size: 2em;
+}
+
+.description {
+    text-align: left;
+}
+
+.heading hr {
+    color: $lightestblue;
+    width: 75%;
+    
+}
+
+#social {
+    display: block;
+    text-align: center;
+    
+    a {
+        color: $lightestviolet;
+        margin: 0 1em;
+
+        &:hover {
+            color: $mediumviolet1;
+        }
+    }
+}
+
+.portfolio {
+    clear: both;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #sidebar {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #main-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: .5em;
+                
+        a {
+        font-size: 1.25em;
+        line-height: 1em;
+        display: block;
+        margin: 0 .5em 0 0;
+        padding: .1em 0;
+        text-align: right;
+        }
+    }
+
+    .grid2 {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .intro {
+        width: 100%;
+
+        #headshot {
+            width: 100px;
+            margin: 0 1em 0;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: .8em;
+        }
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    img {
+        width: 40%;
+    }
+
+    .portfolio  {
+        a {
+            margin: 1em;
+        }
+
+        h3 { 
+            color: $darkgreen;
+            margin-bottom: 1.5em;
+            border-bottom: 2px solid $darkgreen;
+        }
+    }
+
+    aside {
+        @include portfolio;
+    }
+
+}
