@@ -48,7 +48,7 @@ header {
 /* Home page relevant sections */
 .intro {
     margin-top: 1em;
-    background-color: #3C5C97;
+    background-color: $mediumblue2;
     width: 100%;
     text-align: center;
     padding: 1em;
@@ -101,9 +101,10 @@ header {
 
 footer {
     text-align: center;
+    margin-top: 2em;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 899px) {
     body {
         width: 100%;
         overflow: hidden;
@@ -188,12 +189,30 @@ footer {
 #resume {
     @include portfolio;
     margin: 1em 1em 0;
+    text-align: left;
 
     p {
         color: $darkblue;
     }
+
+    button {
+        background-color: $darkblue;
+        color: $lightestblue;
+        padding: .5em;
+        margin: 1em;
+        color: $lightestblue;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+            &:hover {
+                background-color: $darkviolet;
+                color: $lightestblue;
+            }
+    }
    
 }
+
+
 
 /* Portfolio Pages layout */
 
@@ -201,7 +220,7 @@ footer {
     @include portfolio;
     margin: 1em 1em 0;
     text-align: center;
-    width: 95%;
+    //width: 100%;
 
     h3 {
         border-bottom: 3px solid $darkgreen;
@@ -216,6 +235,12 @@ footer {
     ul {
         list-style-type: none;
     }
+
+    li {
+        margin: 1em;
+        padding: 1em;
+        width: 50%;
+    }
 }
 
 .portfoliowork {
@@ -227,4 +252,55 @@ footer {
 
 
 /* Contact Page layout */
+
+
+
+/* Course Page layouts */
+
+@media screen and (max-width: 899px) {
+    .courseTitle {
+        margin-top: 1em;
+        background-color: $mediumblue2;
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+        height: 5em;
+
+        h2 {
+            color: $lightestblue;
+            margin-top: 0;
+            font-size: 1.25em;
+        }
+    }
+}
+.courseIndex {
+    @include portfolio;
+        
+    ul {
+        margin: 0 auto;
+        text-align: justify;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 2em;
+        margin: .5em;
+        background-color: $lightgreen;
+        border: 3px solid $darkgreen;
+        border-radius: 20px;
+        text-align: center;
+        width: 8em;
+
+        &:hover {
+            background-color: $darkgreen;
+            color: $lightestgreen;
+        }
+    }
+
+    a {
+        color: $darkgreen;
+    }
+}
 

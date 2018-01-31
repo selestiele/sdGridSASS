@@ -6,15 +6,25 @@
     
             body {
                 background-color: $mediumblue1;
-                display: grid;
+                // display: grid;
                 width: 100%;
-                grid-template-rows: 200px 1fr 1fr 2fr 100px;
+                // grid-template-rows: 200px 1fr 1fr 100px;
+                // grid-template-areas: 
+                //     "sidebar grid2"
+                //     "sidebar grid2"
+                //     "previous grid2"
+                //     "footer footer";
+            }
+
+            .bodyIndex {
+                display: grid;
+                grid-template-rows: 200px 1fr 1fr 100px;
                 grid-template-areas: 
                     "sidebar grid2"
                     "sidebar grid2"
                     "previous grid2"
-                    "previous grid2"
                     "footer footer";
+
             }
     
             #sidebar {
@@ -105,7 +115,6 @@
             background-color: $mediumblue2;
             margin-top: 0;
             display: grid;
-            grid-template-columns: 1fr 3fr;
             grid-template-areas: 
                 "headshot title"
                 "headshot description"
@@ -143,12 +152,14 @@
     
         #school {
             grid-area: school;
-            margin-right: 5px;
+            margin: .5em .5em 0 auto;
+            width: 100%;
         }
     
         #other {
             grid-area: other;
-            margin-left: 5px;
+            margin: .5em auto 0 .5em;
+            width: 100%;
         }
     
         .portfolio h3 {
@@ -160,4 +171,92 @@
         footer {
             grid-area: footer;
         }
+    
+        /* Main Portfolio page layout */
+    .bodyPortfolio {
+        display: grid;
+        grid-template-areas: 
+            "sidebar grid2"
+            "sidebar grid2"
+            "previous grid2"
+            "footer footer";
     }
+
+    #websites {
+        img {
+            margin: .5em;
+        }
+    }
+
+
+
+
+
+
+    
+    
+    /* About page layout */
+    
+    #resume {
+        display: grid;
+        grid-template-areas:
+            "bio bio"
+            "h2Head ."
+            "software soft"
+            ". button"; 
+        
+        button {
+            grid-area: button;
+        } 
+
+        h2 {
+            grid-area: h2Head;
+        }
+
+        h3 {
+            color: $darkviolet;
+        }
+        
+    }
+
+    #bio {
+        grid-area: bio;
+    }
+
+    .skills {
+        grid-area: software;
+    }
+
+    .softSkills {
+        grid-area: soft;
+    } 
+
+
+    
+    /* Course Page layouts */
+    .courseTitle {
+        grid-area: intro;
+        margin-top: 0;
+        background-color: $mediumblue2;
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+        height: 5em;
+
+        h2 {
+            color: $lightestblue;
+            margin-top: 0;
+            padding: .5em;
+        }
+    }
+
+    .courseIndex {
+        @include portfolio;
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        
+    }    
+
+
+}
